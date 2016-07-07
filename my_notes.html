@@ -1,0 +1,19 @@
+<link href="assets/css/my_notes.css" rel="stylesheet" />
+<link rel="import" href="index.html">
+<div id="content">
+    <article class="post">
+        <article class="post">
+            <h1><a href="/how-to-rename-hash-key-ruby/">How to rename a hash key in Ruby</a></h1>
+            <div class="post-content"><p>Assume you have a Ruby <a href="http://ruby-doc.org/core-2.2.0/Hash.html">Hash</a> with the regions of the United States:</p>
+                <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">usa_regions</span>
+                    <span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"northeast"</span><span class="o">=&gt;</span><span class="mi">11</span><span class="p">,</span> <span class="s2">"southeast"</span><span class="o">=&gt;</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"midwest"</span><span class="o">=&gt;</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"southwest"</span><span class="o">=&gt;</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"rest"</span><span class="o">=&gt;</span><span class="mi">9</span><span class="p">}</span></code></pre></div>
+                <p>But instead of calling the West the <code>rest</code>, you want to rename it to <code>west</code>.</p>
+                <p>Here's how you would do that:</p>
+                <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">usa_regions</span><span class="o">[</span><span class="s2">"west"</span><span class="o">]</span> <span class="o">=</span> <span class="n">usa_regions</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s2">"rest"</span><span class="p">)</span></code></pre></div>
+                <p>Now, <code>usa_regions</code> has a hash key named <code>west</code> instead of <code>rest</code>. Importantly, the value of <code>rest</code> -- <code>9</code> -- has been preserved and assigned to <code>west</code>:</p>
+                <div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">usa_regions</span>
+                    <span class="o">=&gt;</span> <span class="p">{</span><span class="s2">"northeast"</span><span class="o">=&gt;</span><span class="mi">11</span><span class="p">,</span> <span class="s2">"southeast"</span><span class="o">=&gt;</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"midwest"</span><span class="o">=&gt;</span><span class="mi">12</span><span class="p">,</span> <span class="s2">"southwest"</span><span class="o">=&gt;</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"west"</span><span class="o">=&gt;</span><span class="mi">9</span><span class="p">}</span></code></pre></div>
+            </div>
+        </article>
+    </article>
+</div>
